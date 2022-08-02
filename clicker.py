@@ -1,8 +1,8 @@
 import client
 import time
 import pydirectinput
-import gui_main
 import asyncio
+#import guihelper
 
 inputs = {}
 previous_time = 0
@@ -32,10 +32,10 @@ class Click:
         return
 
     @staticmethod
-    def startClicker():
+    def startClicker(collection):
         global inputs, previous_time
         try:
-            client.database.connect(gui_main.clickedCollection)
+            client.database.connect(collection)
         except:
             print("Error connecting to the database.")          
         try:

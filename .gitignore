@@ -35,6 +35,8 @@ MANIFEST
 # GUI files
 gui --*
 guinew*
+window*
+guiHandler*
 *.ui
 
 # Installer logs
