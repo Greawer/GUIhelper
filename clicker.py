@@ -1,13 +1,9 @@
 import client
 import time
-#from pynput.keyboard import Controller as KeyboardController
-#from pynput.mouse import Controller as MouseController
 import pydirectinput
 import gui_main
 import asyncio
 
-#kb_clicker = KeyboardController()
-#m_clicker = MouseController()
 inputs = {}
 previous_time = 0
 
