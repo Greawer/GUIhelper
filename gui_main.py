@@ -17,7 +17,6 @@ class mainWindow(QtWidgets.QWidget):
 
         self.ui = Ui_GUImain()
         self.ui.setupUi(self)
-        self.ui.closeEvent = self.closeEvent
         self.ui.startClicker.clicked.connect(self.on_buttonStartClicker)
         self.ui.stopClicker.clicked.connect(self.on_buttonStopClicker)
         self.ui.startListener.clicked.connect(self.on_buttonStartListener)
