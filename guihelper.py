@@ -46,10 +46,12 @@ class guiListener(QtWidgets.QMainWindow):
     @pyqtSlot()
     def on_buttonStartListener(self):
         Listen.startKeyboardListener()
-
+        Listen.startMouseListener()
+        
     @pyqtSlot()
     def on_buttonStopListener(self):
         Listen.stopKeyboardListener()
+        Listen.stopMouseListener()
 
     @pyqtSlot()
     def returnListener(self):
@@ -80,12 +82,12 @@ class guiClicker(QtWidgets.QMainWindow):
 
     @pyqtSlot()
     def updateCollectionsList(self):
-        #try:
-        collections = client.database.update_collections()
-        self.ui.collectionsList.clear()
-        self.ui.collectionsList.addItems(collections)
-        #except:
-        #    print("Error updating collections list.")     
+        try:
+            collections = client.database.update_collections()
+            self.ui.collectionsList.clear()
+            self.ui.collectionsList.addItems(collections)
+        except:
+            print("Error updating collections list.")     
         
     @pyqtSlot()
     def dropRecord(self):

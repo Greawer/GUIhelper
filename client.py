@@ -14,8 +14,8 @@ class database:
     def drop(coll):
         db[coll].drop()
         
-    def write(id, device, key, state, time):
-        input = {"_id":id, "device":device, "key":key, "state":state, "time":time}
+    def write(id, device, key, state, x, y, time):
+        input = {"_id":id, "device":device, "key":key, "state":state, "x":x, "y":y, "time":time}
         collection.insert_one(input)
 
     def read():
@@ -26,6 +26,7 @@ class database:
 
     def update_collections():
         collections = db.list_collection_names()
+        collections.sort()
         return collections
     
 #input = {"device":'keyboard', "key":"enter", "state":"pressed", "time":"00:00"}
