@@ -1,10 +1,9 @@
 import client
 import time
 import pydirectinput
-import pyautogui
-import asyncio
 from pynput.mouse import Controller as MouseController
-#import guihelper
+#import pyautogui
+#import asyncio
 
 inputs = {}
 previous_time = 0
@@ -115,9 +114,3 @@ class Click:
             print("Clicker not started.")          
         else:            
             inputs = {}
-        
-        
-
-        #"{\"key\": \"g\"}"
-        #t = Timer(time, Click.press(key))
-        #t.start()

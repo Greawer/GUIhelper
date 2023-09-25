@@ -2,7 +2,6 @@ from _thread import *
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-import click
 from sqlalchemy import null
 from PyQt5 import QtWidgets
 import sys
@@ -11,13 +10,13 @@ import gui
 from listener import Listen
 from clicker import Click
 
-clickedCollection = "1"
+clickedCollection = ""
 
 class guiMenu(QtWidgets.QMainWindow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
+        
         self.ui = gui.windowMenu()
         self.ui.setupUi(self)
         self.ui.enterListener.clicked.connect(self.enterListener)
@@ -113,6 +112,7 @@ class guiClicker(QtWidgets.QMainWindow):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
+    app.setApplicationName("GUIhelper")
     widget = QtWidgets.QStackedWidget()    
     winMenu = guiMenu()
     winListener = guiListener()

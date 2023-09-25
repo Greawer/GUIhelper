@@ -1,9 +1,8 @@
 import client
 import time
-from pynput.keyboard import Key, Controller, Listener as KeyboardListener
-from pynput.mouse import Button, Controller as MouseController, Listener as MouseListener
+from pynput.keyboard import Key, Listener as KeyboardListener
+from pynput.mouse import Listener as MouseListener
 from datetime import datetime
-import clicker
 
 keys_currently_pressed = []
 id = 0
@@ -20,7 +19,9 @@ class Listen:
             k = key.char
         except:
             k = key.name
-        if key not in keys_currently_pressed:
+        if key==Key.esc and Key.alt_l in keys_currently_pressed:    #change shortcut
+            return False
+        elif key not in keys_currently_pressed:
             keys_currently_pressed.append(key)
             id += 1
             time_finish = time.perf_counter()
@@ -40,8 +41,6 @@ class Listen:
             time_finish = time.perf_counter()
             client.database.write(id, 'keyboard', k, 'released',  '', '',"{:.2f}".format(time_finish-time_start))
             print('Key released: ' + k + ", time: " + "{:.2f}".format(time_finish-time_start))
-        if key == Key.esc:
-            return False
 
     @staticmethod
     def startKeyboardListener():    

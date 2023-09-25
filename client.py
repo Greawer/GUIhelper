@@ -28,5 +28,3 @@ class database:
         collections = db.list_collection_names()
         collections.sort()
         return collections
-    
-#input = {"device":'keyboard', "key":"enter", "state":"pressed", "time":"00:00"}

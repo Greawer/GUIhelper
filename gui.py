@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 import client
 
 QDialogStyle = "background-color:#333333;color:#333333;max-width:480px;min-width:480px;max-height:320px;min-height:320px;"
@@ -81,7 +81,7 @@ class windowMenu(object):
     def retranslateUi(self, windowMenu):
         _translate = QtCore.QCoreApplication.translate
         windowMenu.setWindowTitle(_translate("windowMenu", "GUIhelper"))
-        self.labelWelcome.setText(_translate("windowMenu", "Press x to do y."))
+        self.labelWelcome.setText(_translate("windowMenu", "Welcome to GUIhelper. Use the buttons to navigate the app."))
         self.enterListener.setText(_translate("windowMenu", "Listener"))
         self.enterClicker.setText(_translate("windowMenu", "Clicker"))
 
@@ -164,7 +164,7 @@ class windowListener(object):
     def retranslateUi(self, windowListener):
         _translate = QtCore.QCoreApplication.translate
         windowListener.setWindowTitle(_translate("windowListener", "Listener"))
-        self.labelListener.setText(_translate("windowListener", "Press x to do y."))
+        self.labelListener.setText(_translate("windowListener", "Press L.Alt+Esc+Z to stop recording."))
         self.startListener.setText(_translate("windowListener", "Start Listener"))
         self.stopListener.setText(_translate("windowListener", "Stop Listener"))
         self.returnListener.setText(_translate("windowListener", "Return"))
@@ -271,7 +271,7 @@ class windowClicker(object):
         windowClicker.setWindowTitle(_translate("windowClicker", "Clicker"))
         self.refreshList.setText(_translate("windowClicker", "Refresh List"))
         self.dropRecord.setText(_translate("windowClicker", "Delete Record"))
-        self.labelClicker.setText(_translate("windowClicker", "Press x to do y."))
+        self.labelClicker.setText(_translate("windowClicker", "Pick a record from list that you want to simulate. Press L.Alt+Esc+Z to cancel simulating."))
         self.startClicker.setText(_translate("windowClicker", "Start Clicker"))
         self.stopClicker.setText(_translate("windowClicker", "Stop Clicker"))
         self.returnClicker.setText(_translate("windowClicker", "Return"))
